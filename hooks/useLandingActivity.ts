@@ -10,6 +10,10 @@ export const useLandingActivity = () => {
     const trackAndNavigate = async (buttonName: string) => {
         const timeSpent = (Date.now() - startTime.current) / 1000;
 
+        // Extract referral code (e.g. /ABCD)
+        const pathname = window.location.pathname;
+        const referralCode = (pathname.length === 5 && pathname.startsWith('/')) ? pathname.substring(1) : undefined;
+
         try {
             // Use keepalive to ensure request completes even if page unloads
             fetch(BACKEND_URL, {
@@ -21,6 +25,7 @@ export const useLandingActivity = () => {
                     type: 'landing_click',
                     buttonName,
                     timeSpent,
+                    referralCode,
                     timestamp: new Date().toISOString(),
                     // IP is captured by backend
                 }),
