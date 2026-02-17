@@ -3,28 +3,28 @@ import React from 'react';
 
 export const DeliveryFeature: React.FC = () => {
   return (
-    <section className="px-6 py-6 bg-white">
-      <div className="max-w-5xl mx-auto bg-[#F3F7FF] pt-20 px-8 md:px-16 overflow-hidden rounded-[2.5rem] border border-blue-50 relative group">
-        <div className="max-w-xl space-y-6 mb-16 relative z-10 text-left">
-          <h2 className="text-3xl md:text-5xl font-black text-[#1A1A1A] leading-tight tracking-tight">
-            Itinéraire de <br className="hidden md:block"/>livraison précis
+    <section className="px-6 py-4 bg-white">
+      <div className="max-w-5xl mx-auto bg-[#F3F7FF] pt-12 px-8 md:px-16 overflow-hidden rounded-[2.5rem] border border-blue-50 relative group">
+        <div className="max-w-xl space-y-6 mb-10 relative z-10 text-left">
+          <h2 className="text-2xl md:text-5xl font-black text-[#1A1A1A] leading-tight tracking-tight">
+            Itinéraire de <br className="hidden md:block" />livraison et adresse précis
           </h2>
-          <p className="text-neutral-500 leading-relaxed text-lg font-medium max-w-md">
-            Plus besoin de demander son chemin. Chaque commande inclut un lien GPS précis. Lancez votre application de navigation favorite en un tap.
+          <p className="text-neutral-500 leading-relaxed text-base font-medium max-w-md">
+            Plus besoin de demander son chemin. Chaque commande inclut un lien GPS et une adresse précis. Lancez votre application de navigation favorite en un tap.
           </p>
         </div>
 
         {/* Mockup Smartphone Container */}
-        <div className="relative w-full max-w-[320px] md:max-w-[380px] h-[380px] md:h-[450px] overflow-hidden rounded-t-[3.5rem] mx-auto shadow-[0_-20px_50px_-10px_rgba(0,0,0,0.1)] transition-transform duration-700 group-hover:translate-y-2">
+        <div className="relative w-full max-w-[320px] md:max-w-[380px] h-[300px] md:h-[450px] overflow-hidden rounded-t-[3.5rem] mx-auto shadow-[0_-20px_50px_-10px_rgba(0,0,0,0.1)] transition-transform duration-700 group-hover:translate-y-2">
           <div className="relative w-full aspect-[9/19.5] bg-neutral-900 rounded-[3rem] border-[8px] border-neutral-900 overflow-hidden ring-1 ring-white/10">
             <div className="relative w-full h-full bg-white rounded-[2.2rem] overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1000&auto=format&fit=crop" 
-                alt="Navigation GPS Mockup" 
+              <img
+                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1000&auto=format&fit=crop"
+                alt="Navigation GPS Mockup"
                 className="w-full h-full object-cover opacity-90"
               />
               <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full z-30"></div>
-              
+
               <div className="absolute top-[180px] left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 border border-neutral-100 z-40 transform hover:scale-105 transition-transform">
                 <div className="flex justify-between items-start mb-3">
                   <div>

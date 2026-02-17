@@ -1,25 +1,29 @@
-
 import React from 'react';
+import { useLandingActivity } from '../hooks/useLandingActivity';
 
 export const Hero: React.FC = () => {
+  const { trackAndNavigate } = useLandingActivity();
+
   return (
-    <section className="px-6 pt-12 pb-24 md:py-28 max-w-5xl mx-auto text-center overflow-hidden">
+    <section className="px-6 pt-8 pb-16 md:py-28 max-w-5xl mx-auto text-center overflow-hidden">
       <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 bg-emerald-50 rounded-full border border-emerald-100 shadow-sm">
         <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-widest">Disponible maintenant • Gratuit</span>
+        <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest">Disponible maintenant • Gratuit</span>
       </div>
 
-      <h1 className="text-4xl md:text-7xl font-black tracking-tight mb-6 leading-[1.1] text-neutral-900">
-        Modernisez votre business et simplifiez votre prise de commandes — <span className="text-emerald-500"> via WhatsApp.</span>
+      <h1 className="text-3xl md:text-7xl font-black tracking-tight mb-6 leading-[1.1] text-neutral-900">
+        Modernisez votre business et simplifiez votre prise de commandes — <span className="text-emerald-500">via WhatsApp.</span>
       </h1>
-      
-      <p className="text-lg md:text-xl text-neutral-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Passez de la discussion WhatsApp confuse à un système de commande professionnel. 
+
+      <p className="text-base md:text-xl text-neutral-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Passez de la discussion WhatsApp confuse à un système de commande professionnel.
         Vos clients achètent en un clic, vous livrez avec un itinéraire GPS précis.
       </p>
-      
+
       <div className="flex justify-center mb-20 px-0 w-full">
-        <button className="w-full max-w-xl bg-[#1A1A1A] text-white font-black py-6 rounded-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] hover:bg-neutral-800 hover:-translate-y-1 transition-all active:scale-95 text-lg uppercase tracking-tight whitespace-nowrap">
+        <button
+          onClick={() => trackAndNavigate('hero_cta')}
+          className="w-full max-w-xl bg-[#1A1A1A] text-white font-black py-4 rounded-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] hover:bg-neutral-800 hover:-translate-y-1 transition-all active:scale-95 text-lg uppercase tracking-tight whitespace-nowrap">
           Commencer gratuitement
         </button>
       </div>
@@ -27,15 +31,15 @@ export const Hero: React.FC = () => {
       <div className="relative mx-auto max-w-[300px] md:max-w-[340px]">
         {/* Smartphone Mockup Frame */}
         <div className="relative aspect-[9/19.5] rounded-[3.5rem] bg-neutral-900 p-2.5 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] border-[8px] border-neutral-800 group cursor-pointer overflow-hidden ring-1 ring-white/10">
-          
+
           {/* Screen Content */}
           <div className="relative w-full h-full bg-neutral-900 rounded-[2.5rem] overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1551288049-bbbda5366a71?q=80&w=1000&auto=format&fit=crop" 
-              alt="Démonstration OrderFlow" 
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bbbda5366a71?q=80&w=1000&auto=format&fit=crop"
+              alt="Démonstration OrderFlow"
               className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
             />
-            
+
             {/* Dynamic Island Mockup */}
             <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30"></div>
 

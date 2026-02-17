@@ -30,13 +30,13 @@ const App: React.FC = () => {
   return (
     <div className="relative min-h-screen bg-white text-[#1A1A1A] font-['Inter',_sans-serif] selection:bg-emerald-100 selection:text-emerald-900">
       {userName && <PersonalizedBanner name={userName} />}
-      
+
       <Header />
 
       <main className="overflow-hidden">
         {/* 1. HERO SECTION */}
         <Hero />
-        
+
         {/* 2. COMMENT ÇA MARCHE */}
         <HowItWorks />
 
@@ -60,10 +60,10 @@ const App: React.FC = () => {
 
         {/* 9. SECTION VITRINE */}
         <Showcase />
-        
+
         {/* 10. POUR QUI ? */}
         <TargetAudience />
-        
+
         {/* 11. CTA FINAL */}
         <FinalCTA />
       </main>
@@ -71,9 +71,9 @@ const App: React.FC = () => {
       {/* ÉLÉMENTS PERMANENTS */}
       <StickyFooter />
       <FloatingContact />
-      
-      <footer className="py-12 px-6 text-center text-neutral-400 text-xs border-t border-neutral-50 mb-20 md:mb-0">
-        <p>© 2025 OrderFlow. La solution numéro 1 pour vendre sur WhatsApp.</p>
+
+      <footer className="py-8 px-6 text-center text-neutral-400 text-xs border-t border-neutral-50 mb-20 md:mb-0">
+        <p>© 2025 andy. La solution numéro 1 pour vendre sur WhatsApp.</p>
         <p className="mt-2 font-medium text-neutral-500 italic">"Modernisez votre business, simplifiez la vie de vos clients."</p>
       </footer>
     </div>

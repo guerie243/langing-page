@@ -3,25 +3,25 @@ import React from 'react';
 
 export const ClearOrderFeature: React.FC = () => {
   return (
-    <section className="px-6 py-10 bg-white">
-      <div className="max-w-4xl mx-auto bg-[#F3F7FF] pt-20 pb-0 px-8 md:px-16 overflow-hidden rounded-[2.5rem] relative group border border-blue-100/50">
-        <div className="max-w-xl space-y-8 mb-16 relative z-10 text-left">
-          <h2 className="text-3xl md:text-5xl font-black text-[#1A1A1A] leading-tight tracking-tight">
-            Recevoir une <br className="hidden md:block"/>commande claire
+    <section className="px-6 py-4 bg-white">
+      <div className="max-w-4xl mx-auto bg-[#F3F7FF] pt-12 pb-0 px-8 md:px-16 overflow-hidden rounded-[2.5rem] relative group border border-blue-100/50">
+        <div className="max-w-xl space-y-8 mb-10 relative z-10 text-left">
+          <h2 className="text-2xl md:text-5xl font-black text-[#1A1A1A] leading-tight tracking-tight">
+            Recevoir une <br className="hidden md:block" />commande claire
           </h2>
-          <p className="text-neutral-500 leading-relaxed text-lg font-medium max-w-md">
+          <p className="text-neutral-500 leading-relaxed text-base font-medium max-w-md">
             Les clients envoient des messages de commande clairs sur WhatsApp, précisant leurs choix et leurs localisations (adresse).
           </p>
         </div>
 
         {/* Mockup Smartphone Container matching the screenshot's style */}
-        <div className="relative w-full max-w-[320px] md:max-w-[360px] h-[340px] md:h-[400px] overflow-visible mx-auto transition-transform duration-700 group-hover:translate-y-2">
+        <div className="relative w-full max-w-[320px] md:max-w-[360px] h-[280px] md:h-[400px] overflow-visible mx-auto transition-transform duration-700 group-hover:translate-y-2">
           {/* Main Phone Frame */}
           <div className="relative w-full h-full bg-[#0C121A] rounded-t-[3rem] border-[10px] border-[#0C121A] shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.15)] ring-1 ring-white/10 overflow-hidden">
             <div className="relative w-full h-full bg-gradient-to-b from-[#1A232E] to-[#0C121A] rounded-t-[2.2rem] overflow-hidden">
               {/* Dynamic Island */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full z-30"></div>
-              
+
               {/* Content representation */}
               <div className="absolute inset-0 flex flex-col items-center justify-center p-8 opacity-20">
                 <div className="w-full h-4 bg-white/20 rounded-full mb-4"></div>
@@ -40,7 +40,7 @@ export const ClearOrderFeature: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Subtle fade effect at the very bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#F3F7FF] to-transparent z-10 pointer-events-none"></div>
       </div>

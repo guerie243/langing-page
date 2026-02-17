@@ -1,16 +1,19 @@
 
 import React from 'react';
+import { useLandingActivity } from '../hooks/useLandingActivity';
 
 export const MessageExamples: React.FC = () => {
+  const { trackAndNavigate } = useLandingActivity();
+
   return (
-    <section className="px-6 py-24 bg-neutral-50 border-t border-neutral-100">
+    <section className="px-6 py-16 bg-neutral-50 border-t border-neutral-100">
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-black text-[#1A1A1A]">Le Flux WhatsApp</h2>
+          <h2 className="text-2xl font-black text-[#1A1A1A]">Le Flux WhatsApp</h2>
           <p className="text-neutral-500 mt-2">D'une simple discussion à une gestion de commande professionelle et moderne.</p>
         </div>
 
-        <div className="relative bg-[#075E54] rounded-[2.5rem] pt-12 pb-20 px-4 md:px-10 shadow-2xl overflow-hidden border-8 border-neutral-800">
+        <div className="relative bg-[#075E54] rounded-[2.5rem] pt-8 pb-12 px-4 md:px-10 shadow-2xl overflow-hidden border-8 border-neutral-800">
           {/* Mockup Status Bar */}
           <div className="absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-1.5 opacity-30">
             <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
@@ -23,19 +26,19 @@ export const MessageExamples: React.FC = () => {
               <h3 className="text-[11px] font-black uppercase text-emerald-100 tracking-[0.2em] text-center">
                 1. LA COMMANDE CLIENT
               </h3>
-              
+
               <div className="relative bg-white rounded-2xl p-6 shadow-lg max-w-[95%] mx-auto">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xl">📢</span>
                   <span className="font-bold text-neutral-800">Nouvelle Commande !</span>
                 </div>
 
-                <div className="space-y-4 text-sm text-neutral-700">
+                <div className="space-y-4 text-xs text-neutral-700">
                   <div className="flex gap-2">
                     <span className="font-bold">Client:</span>
                     <span>Jean Dupont</span>
                   </div>
-                  
+
                   <div className="space-y-1">
                     <div className="font-bold">Articles:</div>
                     <div className="pl-2">- Burger XL x2 (10,000 CFA)</div>
@@ -60,7 +63,7 @@ export const MessageExamples: React.FC = () => {
                 </div>
 
                 <div className="text-[10px] text-neutral-400 text-right mt-4">10:05</div>
-                
+
                 {/* Bubble tail left */}
                 <div className="absolute top-0 -left-2 w-3 h-3 bg-white [clip-path:polygon(100%_0,0_0,100%_100%)]"></div>
               </div>
@@ -73,13 +76,13 @@ export const MessageExamples: React.FC = () => {
               </h3>
               {/* On peut ajouter une bulle ici aussi mais le screenshot s'arrête au titre */}
               <div className="h-20 bg-emerald-800/20 rounded-2xl border-2 border-dashed border-emerald-500/30 flex items-center justify-center">
-                 <span className="text-emerald-200 text-xs font-bold">Votre réponse automatique ici...</span>
+                <span className="text-emerald-200 text-xs font-bold">Votre réponse automatique ici...</span>
               </div>
             </div>
           </div>
 
           {/* Floating badge inside phone as seen in screenshot */}
-          <div className="absolute bottom-6 left-6">
+          <div className="absolute bottom-6 left-6 cursor-pointer hover:scale-105 transition-transform" onClick={() => trackAndNavigate('message_example_badge')}>
             <div className="bg-emerald-400 text-white text-[9px] font-black px-3 py-1.5 rounded-lg uppercase shadow-xl">
               COMMENCEZ GRATUITEMENT
             </div>

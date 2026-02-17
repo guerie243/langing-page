@@ -24,13 +24,13 @@ export const HowItWorks: React.FC = () => {
   ];
 
   return (
-    <section className="px-6 py-24 bg-white border-t border-neutral-50">
+    <section className="px-6 py-16 bg-white border-t border-neutral-50">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-20 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight">Comment ça marche ?</h2>
-          <p className="text-lg text-neutral-500">C'est plus simple pour vos clients, c'est plus rapide pour vous.</p>
+        <div className="text-center mb-12 space-y-4">
+          <h2 className="text-2xl md:text-5xl font-black tracking-tight">Comment ça marche ?</h2>
+          <p className="text-base text-neutral-500">C'est plus simple pour vos clients, c'est plus rapide pour vous.</p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-12">
           {steps.map((step, i) => (
             <div key={i} className="group">
@@ -43,7 +43,7 @@ export const HowItWorks: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">{step.title}</h3>
+              <h3 className="text-lg font-bold mb-3">{step.title}</h3>
               <p className="text-neutral-500 leading-relaxed text-sm">{step.desc}</p>
             </div>
           ))}

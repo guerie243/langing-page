@@ -3,32 +3,32 @@ import React from 'react';
 
 export const Comparison: React.FC = () => {
   return (
-    <section className="px-6 py-24 bg-white overflow-hidden">
+    <section className="px-6 py-16 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-16 tracking-tight text-[#1A1A1A]">Dites adieu au chaos.</h2>
-        
+        <h2 className="text-2xl md:text-5xl font-black text-center mb-16 tracking-tight text-[#1A1A1A]">Dites adieu au chaos.</h2>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* AVANT Section - Apparence plus sobre/négative */}
-          <div className="bg-neutral-50 rounded-[2.5rem] p-10 space-y-8 border border-neutral-100 shadow-sm transition-all hover:shadow-md">
+          <div className="bg-neutral-50 rounded-[2.5rem] p-6 space-y-8 border border-neutral-100 shadow-sm transition-all hover:shadow-md">
             <h3 className="text-[#FF6B6B] font-black uppercase tracking-[0.2em] text-[10px]">AVANT</h3>
             <ul className="space-y-6">
               <li className="flex gap-4 items-center">
                 <span className="w-6 h-6 rounded-full bg-red-50 text-[#FF6B6B] flex items-center justify-center font-bold text-sm shrink-0">✕</span>
-                <p className="text-neutral-500 text-sm font-medium">Discussions longues pour un prix.</p>
+                <p className="text-neutral-500 text-xs font-medium">Discussions longues pour un prix.</p>
               </li>
               <li className="flex gap-4 items-center">
                 <span className="w-6 h-6 rounded-full bg-red-50 text-[#FF6B6B] flex items-center justify-center font-bold text-sm shrink-0">✕</span>
-                <p className="text-neutral-500 text-sm font-medium">Erreurs d'adresse et de livraison.</p>
+                <p className="text-neutral-500 text-xs font-medium">Erreurs d'adresse et de livraison.</p>
               </li>
               <li className="flex gap-4 items-center">
                 <span className="w-6 h-6 rounded-full bg-red-50 text-[#FF6B6B] flex items-center justify-center font-bold text-sm shrink-0">✕</span>
-                <p className="text-neutral-500 text-sm font-medium">Beaucoup d'allers-retours audio.</p>
+                <p className="text-neutral-500 text-xs font-medium">Beaucoup d'allers-retours audio.</p>
               </li>
             </ul>
           </div>
-          
+
           {/* APRÈS Section - Apparence positive et lumineuse (Bleu clair cohérent) */}
-          <div className="bg-[#F3F7FF] rounded-[2.5rem] p-10 space-y-8 relative border border-blue-100 shadow-sm transition-all hover:shadow-md">
+          <div className="bg-[#F3F7FF] rounded-[2.5rem] p-6 space-y-8 relative border border-blue-100 shadow-sm transition-all hover:shadow-md">
             {/* Pulsing Green Dot */}
             <div className="absolute top-10 right-10 flex items-center justify-center">
               <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full"></div>
@@ -39,15 +39,15 @@ export const Comparison: React.FC = () => {
             <ul className="space-y-6">
               <li className="flex gap-4 items-center">
                 <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-lg shadow-emerald-500/20">✓</span>
-                <p className="text-[#1A1A1A] text-sm font-bold tracking-tight">Commandes propres et structurées.</p>
+                <p className="text-[#1A1A1A] text-xs font-bold tracking-tight">Commandes propres et structurées.</p>
               </li>
               <li className="flex gap-4 items-center">
                 <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-lg shadow-emerald-500/20">✓</span>
-                <p className="text-[#1A1A1A] text-sm font-bold tracking-tight">Position GPS exacte reçue par défaut.</p>
+                <p className="text-[#1A1A1A] text-xs font-bold tracking-tight">Position GPS exacte reçue par défaut.</p>
               </li>
               <li className="flex gap-4 items-center">
                 <span className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-lg shadow-emerald-500/20">✓</span>
-                <p className="text-[#1A1A1A] text-sm font-bold tracking-tight">Livraison 2x plus rapide.</p>
+                <p className="text-[#1A1A1A] text-xs font-bold tracking-tight">Livraison 2x plus rapide.</p>
               </li>
             </ul>
 
