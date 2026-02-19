@@ -7,10 +7,10 @@ const CACHE_NAME = 'andy-media-cache-v1';
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
 
-    // Only cache media files (videos and images)
-    const isMedia = /\.(mp4|webm|webp|jpg|jpeg|png|gif|svg)(\?.*)?$/i.test(url.pathname);
+    // Only cache media files (images specifically, videos bypass SW for range-request streaming)
+    const isImage = /\.(webp|jpg|jpeg|png|gif|svg)(\?.*)?$/i.test(url.pathname);
 
-    if (!isMedia) return; // Let everything else go through normally
+    if (!isImage) return; // Let everything else (including .mp4) go through normally
 
     event.respondWith(
         caches.open(CACHE_NAME).then((cache) => {

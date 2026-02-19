@@ -5,12 +5,13 @@ import videoStep3 from '../assets/4WhatsApp.mp4';
 
 const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, className = '' }) => {
   const ref = useRef<HTMLVideoElement>(null);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
 
-    // Set src once on mount (lazy initial load via preload="none")
+    // Set src once on mount (lazy initial load via preload="metadata")
     if (!video.src) {
       video.src = src;
     }
@@ -28,7 +29,10 @@ const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, classNa
           ref.current.pause();
         }
       },
-      { threshold: 0.15 }
+      {
+        threshold: 0.15,
+        rootMargin: "300px"
+      }
     );
 
     observer.observe(video);
@@ -36,14 +40,24 @@ const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, classNa
   }, [src]);
 
   return (
-    <video
-      ref={ref}
-      muted
-      loop
-      playsInline
-      preload="none"
-      className={className}
-    />
+    <div className="relative w-full h-auto">
+      <video
+        ref={ref}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        onWaiting={() => setIsLoading(true)}
+        onPlaying={() => setIsLoading(false)}
+        onCanPlay={() => setIsLoading(false)}
+        className={className}
+      />
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[2px] z-10">
+          <div className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+        </div>
+      )}
+    </div>
   );
 };
 

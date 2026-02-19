@@ -23,6 +23,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
 }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         if (!videoSrc) return;
@@ -30,7 +31,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
         const container = containerRef.current;
         if (!video || !container) return;
 
-        // Set src once on mount (lazy initial load via preload="none")
+        // Set src once on mount (lazy initial load via preload="metadata")
         if (!video.src) {
             video.src = videoSrc;
         }
@@ -48,7 +49,10 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                     videoRef.current.pause();
                 }
             },
-            { threshold: 0.15 }
+            {
+                threshold: 0.15,
+                rootMargin: "300px" // Start loading video 300px before it enters viewport
+            }
         );
 
         observer.observe(container);
@@ -66,16 +70,26 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
             {/* Smartphone Frame - Minimalist and tightly fit */}
             <div className={`relative rounded-[1.8rem] bg-neutral-900 p-[3px] shadow-2xl border-[2px] border-neutral-800 group overflow-hidden ring-1 ring-white/5 ${truncateClass}`}>
                 {/* Screen - Content sticks to top to avoid padding/empty space */}
-                <div className="relative w-full bg-neutral-900 rounded-[1.5rem] overflow-hidden flex flex-col items-start justify-start">
+                <div className="relative w-full bg-neutral-900 rounded-[1.5rem] overflow-hidden flex flex-col items-start justify-start flex-1 min-h-[200px]">
                     {videoSrc ? (
-                        <video
-                            ref={videoRef}
-                            muted
-                            loop
-                            playsInline
-                            preload="none"
-                            className="w-full h-auto block object-top group-hover:scale-[1.02] transition-transform duration-700"
-                        />
+                        <>
+                            <video
+                                ref={videoRef}
+                                muted
+                                loop
+                                playsInline
+                                preload="metadata"
+                                onWaiting={() => setIsLoading(true)}
+                                onPlaying={() => setIsLoading(false)}
+                                onCanPlay={() => setIsLoading(false)}
+                                className="w-full h-auto block object-top group-hover:scale-[1.02] transition-transform duration-700"
+                            />
+                            {isLoading && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-[2px] z-10">
+                                    <div className="w-8 h-8 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+                                </div>
+                            )}
+                        </>
                     ) : imageSrc ? (
                         <img
                             src={imageSrc}
