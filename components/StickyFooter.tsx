@@ -18,14 +18,13 @@ export const StickyFooter: React.FC = () => {
   }, []);
 
   return (
-    <div 
-      className={`fixed bottom-6 right-6 z-50 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
-      }`}
+    <div
+      className={`fixed bottom-6 right-6 z-50 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
+        }`}
     >
       {/* Bouton WhatsApp réduit - Plus discret dans le coin */}
-      <a 
-        href="https://wa.me/yournumber" 
+      <a
+        href="https://wa.me/243850691679"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-center w-12 h-12 bg-[#25D366] text-white rounded-full shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all border border-white/20"
