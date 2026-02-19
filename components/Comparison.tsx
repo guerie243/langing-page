@@ -3,9 +3,9 @@ import React from 'react';
 
 export const Comparison: React.FC = () => {
   return (
-    <section className="px-6 py-16 bg-white overflow-hidden">
+    <section className="px-6 pb-16 pt-0 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-5xl font-black text-center mb-16 tracking-tight text-[#1A1A1A]">Dites adieu au chaos.</h2>
+        <h2 className="text-2xl md:text-5xl font-black text-center mb-8 tracking-tight text-[#1A1A1A]">Dites adieu au chaos.</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* AVANT Section - Apparence plus sobre/négative */}
