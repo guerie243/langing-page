@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhoneFrame } from './PhoneFrame';
 import deliveryVideo from '../assets/6itinéraire.mp4';
+import deliveryPoster from '../assets/6itinéraire.jpg';
 
 export const DeliveryFeature: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ export const DeliveryFeature: React.FC = () => {
         <div className="relative w-full max-w-[220px] md:max-w-[250px] mx-auto translate-y-2">
           <PhoneFrame
             videoSrc={deliveryVideo}
+            poster={deliveryPoster}
             className="!max-w-full"
             isFull={false}
             showIsland={true}

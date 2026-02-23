@@ -1,13 +1,14 @@
 import React from 'react';
 import { PhoneFrame } from './PhoneFrame';
 import showcaseVideo from '../assets/10vitrine.mp4';
+import showcasePoster from '../assets/10vitrine.jpg';
 
 export const Showcase: React.FC = () => {
   return (
     <section className="px-6 py-16 bg-neutral-50 overflow-hidden text-neutral-900">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
         <div className="flex-1 order-2 md:order-1 relative">
-          <PhoneFrame videoSrc={showcaseVideo} showIsland className="max-w-[200px] md:max-w-[240px]" />
+          <PhoneFrame videoSrc={showcaseVideo} poster={showcasePoster} showIsland className="max-w-[200px] md:max-w-[240px]" />
         </div>
 
         <div className="flex-1 order-1 md:order-2 space-y-8">

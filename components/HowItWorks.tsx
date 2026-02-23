@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import videoStep1 from '../assets/2catalogue.mp4';
+import posterStep1 from '../assets/2catalogue.jpg';
 import videoStep2 from '../assets/3informationsclient.mp4';
+import posterStep2 from '../assets/3informationsclient.jpg';
 import videoStep3 from '../assets/4WhatsApp.mp4';
+import posterStep3 from '../assets/4WhatsApp.jpg';
 
-const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, className = '' }) => {
+const LazyVideo: React.FC<{ src: string; poster?: string; className?: string }> = ({ src, poster, className = '' }) => {
   const ref = useRef<HTMLVideoElement>(null);
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -11,7 +14,7 @@ const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, classNa
     const video = ref.current;
     if (!video) return;
 
-    // Set src once on mount (lazy initial load via preload="metadata")
+    // Set src once on mount (lazy initial load via preload="none" + observer)
     if (!video.src) {
       video.src = src;
     }
@@ -46,7 +49,8 @@ const LazyVideo: React.FC<{ src: string; className?: string }> = ({ src, classNa
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
+        poster={poster}
         onWaiting={() => setIsLoading(true)}
         onPlaying={() => setIsLoading(false)}
         onCanPlay={() => setIsLoading(false)}
@@ -67,19 +71,22 @@ export const HowItWorks: React.FC = () => {
       title: "Le client choisit ses produits",
       desc: "Il parcourt votre catalogue moderne et ajoute au panier sans avoir à discuter.",
       icon: "🛍️",
-      video: videoStep1
+      video: videoStep1,
+      poster: posterStep1
     },
     {
       title: "Il remplit ses infos & livraison",
       desc: "Nom, numéro et position GPS précise capturée en un clic pour vous.",
       icon: "📍",
-      video: videoStep2
+      video: videoStep2,
+      poster: posterStep2
     },
     {
       title: "WhatsApp s'ouvre tout seul",
       desc: "Le message complet est déjà prêt. Le client n'a plus qu'à cliquer sur 'Envoyer'.",
       icon: "✉️",
-      video: videoStep3
+      video: videoStep3,
+      poster: posterStep3
     }
   ];
 
@@ -98,6 +105,7 @@ export const HowItWorks: React.FC = () => {
               <div className="relative w-full max-w-[140px] md:max-w-[160px] rounded-[0.8rem] bg-neutral-950 mb-6 overflow-hidden shadow-lg group-hover:scale-[1.03] transition-transform duration-500 border border-neutral-800">
                 <LazyVideo
                   src={step.video}
+                  poster={step.poster}
                   className="w-full h-auto block"
                 />
 

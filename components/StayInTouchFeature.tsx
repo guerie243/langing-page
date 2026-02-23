@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhoneFrame } from './PhoneFrame';
 import contactVideo from '../assets/7resteencontact.mp4';
+import contactPoster from '../assets/7resteencontact.jpg';
 
 export const StayInTouchFeature: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ export const StayInTouchFeature: React.FC = () => {
         <div className="relative w-full max-w-[220px] md:max-w-[250px] mx-auto translate-y-2">
           <PhoneFrame
             videoSrc={contactVideo}
+            poster={contactPoster}
             className="!max-w-full"
             isFull={false}
             cutHeight="max-h-[450px] md:max-h-[550px]"

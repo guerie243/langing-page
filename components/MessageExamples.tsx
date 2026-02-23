@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhoneFrame } from './PhoneFrame';
 import flowVideo from '../assets/9fluxwhatsapp.mp4';
+import flowPoster from '../assets/9fluxwhatsapp.jpg';
 
 export const MessageExamples: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ export const MessageExamples: React.FC = () => {
         </div>
 
         {/* Message examples/flow: reduced to 200-240px for a more compact look */}
-        <PhoneFrame videoSrc={flowVideo} showIsland className="max-w-[200px] md:max-w-[240px]" />
+        <PhoneFrame videoSrc={flowVideo} poster={flowPoster} showIsland className="max-w-[200px] md:max-w-[240px]" />
       </div>
     </section>
   );

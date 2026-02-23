@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLandingActivity } from '../hooks/useLandingActivity';
 import demoVideo from '../assets/1démonstration.mp4';
+import demoPoster from '../assets/1démonstration.jpg';
 import { PhoneFrame } from './PhoneFrame';
 
 export const Hero: React.FC = () => {
@@ -31,7 +32,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Hero phone reduced to 220-260px range to feel less massive */}
-      <PhoneFrame videoSrc={demoVideo} showIsland className="max-w-[220px] md:max-w-[260px]" />
+      <PhoneFrame videoSrc={demoVideo} poster={demoPoster} showIsland className="max-w-[220px] md:max-w-[260px]" />
     </section>
   );
 };

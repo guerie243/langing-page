@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 interface PhoneFrameProps {
     children?: React.ReactNode;
     videoSrc?: string;
+    poster?: string;
     imageSrc?: string;
     className?: string;
     showIsland?: boolean;
@@ -14,6 +15,7 @@ interface PhoneFrameProps {
 export const PhoneFrame: React.FC<PhoneFrameProps> = ({
     children,
     videoSrc,
+    poster,
     imageSrc,
     className = "",
     showIsland = false,
@@ -31,7 +33,7 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
         const container = containerRef.current;
         if (!video || !container) return;
 
-        // Set src once on mount (lazy initial load via preload="metadata")
+        // Set src once on mount (lazy initial load via preload="none" + observer)
         if (!video.src) {
             video.src = videoSrc;
         }
@@ -78,7 +80,8 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                                 muted
                                 loop
                                 playsInline
-                                preload="metadata"
+                                preload="none"
+                                poster={poster}
                                 onWaiting={() => setIsLoading(true)}
                                 onPlaying={() => setIsLoading(false)}
                                 onCanPlay={() => setIsLoading(false)}

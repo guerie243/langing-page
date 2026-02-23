@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhoneFrame } from './PhoneFrame';
 import shareVideo from '../assets/8partage.mp4';
+import sharePoster from '../assets/8partage.jpg';
 
 export const ShareWithRidersFeature: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ export const ShareWithRidersFeature: React.FC = () => {
         <div className="relative w-full max-w-[220px] md:max-w-[250px] mx-auto translate-y-2">
           <PhoneFrame
             videoSrc={shareVideo}
+            poster={sharePoster}
             className="!max-w-full"
             isFull={false}
             cutHeight="max-h-[450px] md:max-h-[550px]"
