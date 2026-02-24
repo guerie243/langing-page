@@ -15,11 +15,16 @@ import { FinalCTA } from './components/FinalCTA';
 import { StickyFooter } from './components/StickyFooter';
 import { PersonalizedBanner } from './components/PersonalizedBanner';
 import { FloatingContact } from './components/FloatingContact';
+import { useLandingActivity } from './hooks/useLandingActivity';
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string | null>(null);
+  const { trackPageView } = useLandingActivity();
 
   useEffect(() => {
+    // Track initial page view
+    trackPageView();
+
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
     if (name) {
