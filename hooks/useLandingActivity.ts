@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-const BACKEND_URL = 'https://backend-app-3fyc.onrender.com/api/activities';
+const BACKEND_URL = 'https://backend-module2-lpqw.onrender.com/api/activities';
 // The user provided https://andy-business.vercel.app/, assuming /register exists for signup
 const REGISTER_URL = 'https://andy-business.vercel.app/register';
 
