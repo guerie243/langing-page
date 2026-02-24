@@ -19,18 +19,25 @@ import { useLandingActivity } from './hooks/useLandingActivity';
 
 const App: React.FC = () => {
   const [userName, setUserName] = useState<string | null>(null);
-  const { trackPageView } = useLandingActivity();
+  const { trackPageView, trackExit } = useLandingActivity();
 
   useEffect(() => {
     // Track initial page view
     trackPageView();
+
+    // Track session exit
+    window.addEventListener('pagehide', trackExit);
 
     const params = new URLSearchParams(window.location.search);
     const name = params.get('name');
     if (name) {
       setUserName(name);
     }
-  }, []);
+
+    return () => {
+      window.removeEventListener('pagehide', trackExit);
+    };
+  }, [trackExit]);
 
   return (
     <div className="relative min-h-screen bg-white text-[#1A1A1A] font-['Inter',_sans-serif] selection:bg-emerald-100 selection:text-emerald-900">

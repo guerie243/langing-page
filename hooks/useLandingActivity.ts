@@ -64,5 +64,24 @@ export const useLandingActivity = () => {
         }, 300);
     };
 
-    return { trackAndNavigate, trackPageView };
+    const trackExit = () => {
+        const timeSpent = (Date.now() - startTime.current) / 1000;
+
+        const payload = {
+            eventType: 'landing_exit',
+            screenName: 'Landing Page',
+            timestamp: new Date().toISOString(),
+            metadata: {
+                timeSpent,
+                platform: 'web_landing'
+            }
+        };
+
+        try {
+            const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+            navigator.sendBeacon(BACKEND_URL, blob);
+        } catch (e) { }
+    };
+
+    return { trackAndNavigate, trackPageView, trackExit };
 };
