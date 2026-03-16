@@ -52,8 +52,8 @@ export const PhoneFrame: React.FC<PhoneFrameProps> = ({
                 }
             },
             {
-                threshold: 0.15,
-                rootMargin: "300px" // Start loading video 300px before it enters viewport
+                threshold: 0.6, // Majority of video (60%) must be visible
+                rootMargin: "0px" // More precise for visibility requirements
             }
         );
 

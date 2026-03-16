@@ -83,5 +83,35 @@ export const useLandingActivity = () => {
         } catch (e) { }
     };
 
-    return { trackAndNavigate, trackPageView, trackExit };
+    const trackAndExternalNavigate = (buttonName: string, url: string) => {
+        const timeSpent = (Date.now() - startTime.current) / 1000;
+        const payload = {
+            eventType: 'landing_click',
+            screenName: 'Landing Page',
+            timestamp: new Date().toISOString(),
+            metadata: {
+                buttonName,
+                timeSpent,
+                platform: 'web_landing'
+            }
+        };
+
+        fetch(BACKEND_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            keepalive: true,
+        }).catch(() => { });
+
+        try {
+            const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+            navigator.sendBeacon(BACKEND_URL, blob);
+        } catch (e) { }
+
+        setTimeout(() => {
+            window.open(url, '_blank');
+        }, 300);
+    };
+
+    return { trackAndNavigate, trackAndExternalNavigate, trackPageView, trackExit };
 };
