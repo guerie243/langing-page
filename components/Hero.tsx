@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <h1 className="text-3xl md:text-7xl font-black tracking-tight mb-6 leading-[1.1]">
-        Transformez votre WhatsApp en une vitrine d'éliteTransformez votre WhatsApp en une vitrine d'élite — <span className="text-emerald-500">WhatsApp</span>
+        Transformez votre <span className="text-emerald-500">WhatsApp</span> en une vitrine d'élite, moderne et efficace
       </h1>
 
       <p className="text-base md:text-xl text-neutral-500 mb-10 max-w-2xl mx-auto leading-relaxed">
